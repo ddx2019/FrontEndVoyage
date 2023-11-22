@@ -1,0 +1,57 @@
+{
+    "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.editor.enablePreview": false, //打开文件不覆盖
+    "search.followSymlinks": false, //关闭快速预览 // "files.autoSave": "afterDelay", //打开自动保存
+    "editor.lineNumbers": "on", //开启行数提示
+    "editor.fontSize": 16,
+    // "editor.fontWeight": "100",
+    "editor.quickSuggestions": {
+        //开启自动显示建议
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    "editor.tabSize": 2, //制表符符号eslint
+    "prettier.semi": true, //去掉代码结尾的分号
+    "prettier.singleQuote": false, //使用单引号替代双引号
+    "prettier.arrowParens": "avoid", //  (x) => {} 箭头函数参数只有一个时是否要有小括号。avoid：省略括号
+    "prettier.trailingComma": "none", //去除对象最末尾元素跟随的逗号
+    "javascript.format.insertSpaceBeforeFunctionParenthesis": true, //让函数(名)和后面的括号之间加个空格
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prettier.requireConfig": false,
+    "typescript.tsdk": "node_module/typescript/lib",
+    "files.eol": "\n",
+    "explorer.compactFolders": false,
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitDisabledWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false
+    },
+    "editor.formatOnSave": false,
+    "window.zoomLevel": 0,
+    // 默认使用prettier格式化支持的文件
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "javascript.validate.enable": false,
+    // "workbench.colorTheme": "Default Light+",
+    "diffEditor.ignoreTrimWhitespace": false, //关闭javascript 验证 ，相当于允许js使用类型注释
+    "files.associations": {
+        "*.json": "jsonc" //允许json文件用js注释
+    },
+    "px-to-rpx.baseWidth": 375,
+    "px-to-rpx.fixedDigits": 2,
+    "volar.inlayHints.eventArgumentInInlineHandlers": false
+}
