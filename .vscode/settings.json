@@ -53,5 +53,8 @@
     },
     "px-to-rpx.baseWidth": 375,
     "px-to-rpx.fixedDigits": 2,
-    "volar.inlayHints.eventArgumentInInlineHandlers": false
+    "volar.inlayHints.eventArgumentInInlineHandlers": false,
+    "[scss]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    }
 }

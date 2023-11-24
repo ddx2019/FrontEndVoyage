@@ -1,0 +1,53 @@
+.confirm-dialog {
+  .dialog-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .icon-fulfilled {
+      font-size: 10rem;
+      width: 18rem;
+      height: 18rem;
+      color: #fff;
+      background: #1a1a18;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .title {
+      font-size: 18rem;
+      font-weight: bold;
+      line-height: 20rem;
+      color: #171a1d;
+      margin-left: 3rem;
+    }
+  }
+
+  .sub-title {
+    width: 196rem;
+    height: 32rem;
+    font-size: 14rem;
+    font-weight: 500;
+    line-height: 16rem;
+    text-align: center;
+    color: rgba(23, 26, 29, 0.4);
+    margin: 5rem auto -10rem auto;
+    box-sizing: border-box;
+  }
+
+  .confirm-btn {
+    border: none;
+    box-sizing: border-box;
+    border-top: 1rem solid rgba(126, 134, 142, 0.16);
+    width: 100%;
+    height: 60rem;
+    background: #fff;
+    text-align: center;
+    font-size: 18rem;
+    font-weight: bold;
+    line-height: 20rem;
+    color: #e6a523;
+  }
+}
