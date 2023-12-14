@@ -56,5 +56,8 @@
     "volar.inlayHints.eventArgumentInInlineHandlers": false,
     "[scss]": {
         "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
     }
 }
