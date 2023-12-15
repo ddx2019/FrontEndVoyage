@@ -23,7 +23,7 @@
     "prettier.trailingComma": "none", //去除对象最末尾元素跟随的逗号
     "javascript.format.insertSpaceBeforeFunctionParenthesis": true, //让函数(名)和后面的括号之间加个空格
     "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "prettier.requireConfig": false,
     "typescript.tsdk": "node_module/typescript/lib",
@@ -43,7 +43,7 @@
     // 默认使用prettier格式化支持的文件
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "javascript.validate.enable": false,
     // "workbench.colorTheme": "Default Light+",
