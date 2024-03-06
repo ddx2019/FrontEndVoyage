@@ -201,11 +201,11 @@ git reset --hard <hash>
 
 ## 使用 Git Stash 保存和恢复更改，同时在修复 Bug 和功能分支之间切换的实践操作流程
 
-假设你正在 `feature-branch` 分支上工作，你修改了 `index.vue` 文件，但突然你需要切换到另一个分支 `bugfix-branch` 去修复一个紧急的 bug。你不想提交当前的更改，因为你的工作还没有完成。这就是 `git stash --save` 的一个典型使用场景。
+假设你正在 `feature-branch` 分支上工作，你修改了 `index.vue` 文件，但突然你需要切换到另一个分支 `bugfix-branch` 去修复一个紧急的 bug。你不想提交当前的更改，因为你的工作还没有完成。这就是 `git stash save` 的一个典型使用场景。
 
 ```bash
 # 1. 保存你的更改，并给这个 stash 一个描述性的消息
-git stash --save "保存 index.vue 的更改"
+git stash save "保存 index.vue 的更改" # 注意，若你的内容存在未被git追踪到的文件（如你的index.vue文件是新创建的，需先执行git add 命令(如git add . 表示添加所有修改到暂存区)，将其添加到暂存区后，才能被存入stash）
 
 # 2. 切换到 `bugfix-branch` 分支
 git checkout bugfix-branch
@@ -220,7 +220,8 @@ git stash list
 git stash pop #等价于 git stash pop stash@{0}
 
 ```
-这个流程首先使用 `git stash --save` 命令保存你的更改，然后切换到 `bugfix-branch` 分支。修复 bug 并提交更改后，切换回 `feature-branch` 分支。然后，使用 `git stash list` 命令查看所有的 stash，最后使用 `git stash pop` 命令恢复你之前保存的更改。
+
+这个流程首先使用 `git stash save` 命令保存你的更改，然后切换到 `bugfix-branch` 分支。修复 bug 并提交更改后，切换回 `feature-branch` 分支。然后，使用 `git stash list` 命令查看所有的 stash，最后使用 `git stash pop` 命令恢复你之前保存的更改。
 
 ## `git stash pop` 后出现冲突
 
@@ -266,4 +267,5 @@ git merge feature
 # 将合并后的更改推送到远程的 master 分支
 git push
 ```
+
 这个流程首先切换到 master 分支，然后拉取最新的代码。接着，使用 `git merge` 命令将 feature 分支的更改合并到 master 分支。如果在合并过程中出现冲突，需要手动解决这些冲突，然后再次添加和提交。最后，将合并后的更改推送到远程的 master 分支。
