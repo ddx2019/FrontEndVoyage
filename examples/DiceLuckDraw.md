@@ -2,6 +2,8 @@
 
 通过替换骰子图片和使用  `[transform](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)` 属性来模拟简单的骰子滚动效果
 
+[online demo](https://codepen.io/DX-D/pen/eYadORr)
+
 ## 图片切换与旋转动画
 
 **前提：** 你拥有6张不同面的骰子图片

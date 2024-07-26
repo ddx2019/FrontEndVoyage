@@ -269,3 +269,48 @@ git push
 ```
 
 这个流程首先切换到 master 分支，然后拉取最新的代码。接着，使用 `git merge` 命令将 feature 分支的更改合并到 master 分支。如果在合并过程中出现冲突，需要手动解决这些冲突，然后再次添加和提交。最后，将合并后的更改推送到远程的 master 分支。
+
+## 将feature合并到master，但只想保留一条commit信息（使用 git merge 和 git reset）
+
+将 feature-ai 分支合并到 master 并压缩合并的多个提交为一个单独的提交，以便保持master分支历史的简洁，并同时保留合并的所有更改。
+
+```bash
+# 1. 切换到 master 分支
+git checkout master
+
+# 2. 合并 feature-ai 分支，但不进行快速前进合并（使用 --no-ff）
+git merge --no-ff feature-ai
+
+# 如果有冲突，需手动解决冲突，然后再次添加和提交
+# git add .
+# git commit -m "Resolve merge conflicts"
+
+# 3. 将 HEAD 重置到合并之前的状态，保留工作目录中的更改
+git reset --soft HEAD~1
+
+# 4. 将所有更改作为一个新的 commit 提交
+git commit -m "Merge feature-ai into master with a single commit"
+
+# 5. 推送合并后的 master 分支到远程仓库
+git push origin master
+
+```
+
+### 命令详解
+
+```bash
+ #这条命令用于将当前工作分支切换到 master，即你希望合并代码的目标分支。
+git checkout master 
+
+#该命令合并 feature-ai 分支到 master。--no-ff 选项表示不进行快速前进合并，即使可能只需简单地将分支指针向前移动。这样会强制创建一个新的合并提交，以便在历史中保留合并操作的记录。
+git merge --no-ff feature-ai #该命令执行后，若用git log查看，将会看到所有feature-ai与master的commit信息
+
+#该命令将当前分支的 HEAD 指针重置到合并前的提交，但保留了工作目录中的所有更改和暂存区中的内容。这样做是为了移除由 git merge 创建的默认合并提交，准备重新提交一个自定义的合并提交。
+git reset --soft HEAD~1 # #该命令执行后，若用git log查看，将会看到合并前的所有master的commit信息（即，并无feature-ai的commit信息）,但会保留所有feature-ai与master的更改
+
+# 这条命令将所有合并后的更改作为一个新的提交进行提交。你可以在这一步编写一个自定义的提交信息，以记录合并的上下文和意图。
+git commit -m "Merge feature-ai into master with a single commit" #该命令执行后，master的commit内容，将仅在合并前的基础上添加这一条commit信息。
+
+#将本地 master 分支的最新状态推送到远程仓库的 master 分支。推送后，远程仓库将更新为包含合并后的结果，并且只会有一条合并提交记录，简化了提交历史。
+git push origin master 
+```
